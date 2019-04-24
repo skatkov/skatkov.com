@@ -7,7 +7,6 @@
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Use the title from a page's frontmatter if it has one -->
     <title><%= current_page.data.title || "Middleman" %></title>
-  </head>
 
     <style type="text/css">
       a:link {color:#CE2029; text-decoration:none;}
@@ -27,6 +26,8 @@
       }
 
     </style>
+  </head>
+
   <body>
     <%= yield %>
   </body>
