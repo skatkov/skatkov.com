@@ -1,0 +1,183 @@
+I"H<p><img src="https://thepracticaldev.s3.amazonaws.com/i/879q596j4z6igz2j52fc.png" alt="Woohoo, Doom guy in notifications!" /></p>
+
+<p>I hate repetitive work with passion and I try to avoid it as much as possible. While browsing twitter I randomly stumbled on <a href="https://www.youtube.com/watch?v=aP5NNkzb4og&amp;feature=youtu.be&amp;t=2572">Sam Saffron video, there he talks about his love of improving own workflow and building dev tools</a>.</p>
+
+<p>One off first point Sam mentions there is <strong>autospec</strong> and demonstrates how it works. I had really mixed feelings about this particular part. I felt relieved that my testsuite takes less than 5 minutes, but at the same time, I had this nagging feeling inside me too…</p>
+
+<p>My workflow consists of following stages:</p>
+
+<ol>
+  <li>do small code changes</li>
+  <li>run tests</li>
+  <li>rollback or fix test if something failed</li>
+  <li>continue to step 1</li>
+</ol>
+
+<p>It’s hard to believe, but most developers do this all day. Some people manually execute tests, but I just run automated tests manually.  In my case it takes 20 second for ~500 assertions to happen… It feels repetitive really fast.</p>
+
+<p>So… And here is Sam… He doesn’t execute testsuite routinely through the day? Doesn’t pick specific files for testing? Yes, please, give me the same. But I felt even worse then I understood that <a href="https://github.com/arnvald/autospec">autospec</a> doesn’t work with <a href="https://github.com/seattlerb/minitest">minitest</a>. I had no desire to change to rspec.</p>
+
+<p>So what do other minitest users do in this case? What would you do? If your using <a href="https://github.com/guard/guard">guard</a> already, you may want to pick <a href="https://github.com/guard/guard-minitest">guard-minitest</a>. But it just runs all tests, without focusing on broken one. If it is okey with you - then go on and use it. if you want something better you can read further.</p>
+
+<h2 id="lets-use-minitest-autotest">Let’s use minitest-autotest</h2>
+
+<p>It’s pretty easy to add. Just open your <strong>Gemfile</strong> and add these lines:</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">group</span> <span class="ss">:test</span> <span class="k">do</span>
+      <span class="n">gem</span> <span class="s2">"minitest-autotest”
+    end
+</span></code></pre></div></div>
+
+<p>Create a simplest possible configuration file in root of your project and call it <strong>.autotest</strong></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nb">require</span> <span class="s1">'autotest/restart'</span>
+
+    <span class="no">Autotest</span><span class="p">.</span><span class="nf">add_hook</span> <span class="ss">:initialize</span> <span class="k">do</span> <span class="o">|</span><span class="n">at</span><span class="o">|</span>
+      <span class="n">at</span><span class="p">.</span><span class="nf">testlib</span> <span class="o">=</span> <span class="s2">"minitest/autorun"</span>
+    <span class="k">end</span>
+</code></pre></div></div>
+
+<p>You don’t really need it, it “just  works” (c) without it. But we’ll need it later, there is obviously something missing here. I don’t want to be checking my console all the time, to be sure that I didn’t broke anything.</p>
+
+<h2 id="better-notification-to-the-rescue">Better notification to the rescue!</h2>
+
+<p>We already talked about guard. Guard wiki contains very <a href="https://github.com/guard/guard/wiki/System-notifications">nice summary about system notifications and libraries</a> that we can use. Since I use OSX - my two options are growl and <a href="https://github.com/julienXX/terminal-notifier">terminal-notifier</a>. I don’t really feel like paying for growl, so terminal notifier seems like a perfect candidate for a job. Let’s add more code, shall we?</p>
+
+<p>Our <strong>Gemfile</strong> should have one additional line:</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">group</span> <span class="ss">:test</span> <span class="k">do</span>
+      <span class="n">gem</span> <span class="s2">"minitest-autotest"</span>
+      <span class="n">gem</span> <span class="s2">"terminal-notifier"</span>
+    <span class="k">end</span>
+</code></pre></div></div>
+
+<p>And our <strong>.autotest</strong> code becomes a bit more interesting:</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nb">require</span> <span class="s1">'autotest/restart'</span>
+    <span class="nb">require</span> <span class="s1">'terminal-notifier'</span>
+
+    <span class="no">Autotest</span><span class="p">.</span><span class="nf">add_hook</span> <span class="ss">:initialize</span> <span class="k">do</span> <span class="o">|</span><span class="n">at</span><span class="o">|</span>
+      <span class="n">at</span><span class="p">.</span><span class="nf">testlib</span> <span class="o">=</span> <span class="s2">"minitest/autorun"</span>
+    <span class="k">end</span>
+
+    <span class="no">Autotest</span><span class="p">.</span><span class="nf">add_hook</span> <span class="ss">:ran_command</span> <span class="k">do</span> <span class="o">|</span><span class="n">at</span><span class="o">|</span>
+      <span class="k">if</span> <span class="n">at</span><span class="p">.</span><span class="nf">failures</span><span class="p">.</span><span class="nf">count</span> <span class="o">&gt;</span> <span class="mi">0</span>
+        <span class="no">TerminalNotifier</span><span class="p">.</span><span class="nf">notify</span><span class="p">(</span><span class="n">failed_message</span><span class="p">(</span><span class="n">at</span><span class="p">.</span><span class="nf">failures</span><span class="p">.</span><span class="nf">count</span><span class="p">),</span>
+          <span class="ss">:title</span> <span class="o">=&gt;</span> <span class="s1">'minitest-autotest'</span>
+         <span class="p">)</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">failed_message</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+      <span class="n">count</span><span class="p">.</span><span class="nf">eql?</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">?</span>  <span class="s2">"</span><span class="si">#{</span><span class="n">count</span><span class="si">}</span><span class="s2"> test failed"</span> <span class="p">:</span>  <span class="s2">"</span><span class="si">#{</span><span class="n">count</span><span class="si">}</span><span class="s2"> tests failed"</span>
+    <span class="k">end</span>
+</code></pre></div></div>
+
+<p>This is already much better - now we receive notification every time tests fail. But this sounds like a problem:</p>
+
+<ul>
+  <li>we’re bombarded by notifications. autotest focuses on erroneous test and runs it indefinitely (generating notifications every single time)</li>
+  <li>If we rollback our code, we have to again verify in console that spec’s passed. Would be nice, if we don’t have to do this.</li>
+</ul>
+
+<h2 id="lets-make-notifications-more-intelligent-without-machine-learning">Let’s make notifications more intelligent (without machine learning…)</h2>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nb">require</span> <span class="s1">'autotest/restart'</span>
+    <span class="nb">require</span> <span class="s1">'terminal-notifier'</span>
+
+    <span class="no">SKIP_MESSAGES</span> <span class="o">=</span> <span class="mi">5</span>
+
+    <span class="no">Autotest</span><span class="p">.</span><span class="nf">add_hook</span> <span class="ss">:initialize</span> <span class="k">do</span> <span class="o">|</span><span class="n">at</span><span class="o">|</span>
+      <span class="n">at</span><span class="p">.</span><span class="nf">testlib</span> <span class="o">=</span> <span class="s2">"minitest/autorun"</span>
+      <span class="vi">@counter</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">end</span>
+
+    <span class="no">Autotest</span><span class="p">.</span><span class="nf">add_hook</span> <span class="ss">:all_good</span> <span class="k">do</span> <span class="o">|</span><span class="n">at</span><span class="o">|</span>
+      <span class="k">if</span> <span class="vi">@counter</span> <span class="o">&gt;</span> <span class="mi">0</span>
+        <span class="no">TerminalNotifier</span><span class="p">.</span><span class="nf">notify</span><span class="p">(</span><span class="s2">"All fixed!"</span><span class="p">,</span>
+          <span class="ss">:title</span> <span class="o">=&gt;</span> <span class="s1">'minitest-autotest'</span>
+        <span class="p">)</span>
+
+        <span class="vi">@counter</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="no">Autotest</span><span class="p">.</span><span class="nf">add_hook</span> <span class="ss">:ran_command</span> <span class="k">do</span> <span class="o">|</span><span class="n">at</span><span class="o">|</span>
+      <span class="k">if</span> <span class="n">at</span><span class="p">.</span><span class="nf">failures</span><span class="p">.</span><span class="nf">count</span> <span class="o">&gt;</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="vi">@counter</span><span class="p">.</span><span class="nf">eql?</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">||</span> <span class="vi">@counter</span><span class="p">.</span><span class="nf">eql?</span><span class="p">(</span><span class="no">SKIP_MESSAGES</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+          <span class="no">TerminalNotifier</span><span class="p">.</span><span class="nf">notify</span><span class="p">(</span><span class="n">failed_message</span><span class="p">(</span><span class="n">at</span><span class="p">.</span><span class="nf">failures</span><span class="p">.</span><span class="nf">count</span><span class="p">),</span>
+            <span class="ss">:title</span> <span class="o">=&gt;</span> <span class="s1">'minitest-autotest'</span>
+          <span class="p">)</span>
+
+          <span class="vi">@counter</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">else</span>
+          <span class="vi">@counter</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">failed_message</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+      <span class="n">count</span><span class="p">.</span><span class="nf">eql?</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">?</span> <span class="s2">"</span><span class="si">#{</span><span class="n">count</span><span class="si">}</span><span class="s2"> test failed"</span> <span class="p">:</span> <span class="s2">"</span><span class="si">#{</span><span class="n">count</span><span class="si">}</span><span class="s2"> tests failed"</span>
+    <span class="k">end</span>
+</code></pre></div></div>
+<p>So now we added a simple counter. Based on this counter we can determine:</p>
+
+<ul>
+  <li>If we already shown error notifications and present ‘Wohoo, everything is fixed’ notification</li>
+  <li>We can skip some of notifications, not to be overly annoying</li>
+</ul>
+
+<p><img src="https://thepracticaldev.s3.amazonaws.com/i/dh1dhf89vdj1qp2uwxsp.png" alt="Not a cool version of notifications" /></p>
+
+<p>It seems like this is almost perfect for my day-to-day activities. But lacks coolness..</p>
+
+<h2 id="doom-guy-enters-the-stage">Doom guy enters the stage..</h2>
+
+<p>If your my age, you will never forget about epic game called Doom. This could also be a purely Estonian problem, because Jarmo Pertman (who is my age and Estonian as I am) long time ago wrote a <a href="https://github.com/jarmo/autotest-doom">doom-guy-bleeding indicator plugin for old version of autotest</a> that doesn’t work nowadays.</p>
+
+<p>Let’s use his work for good - <a href="https://github.com/jarmo/autotest-doom/tree/master/images">steal some of images he had there</a> and place them into <code class="highlighter-rouge">/vendor/doomguy/</code> folder. And steal some of his code (thank god it’s open source). Let’s sum all of this:</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nb">require</span> <span class="s1">'autotest/restart'</span>
+    <span class="nb">require</span> <span class="s1">'terminal-notifier'</span>
+
+    <span class="no">SKIP_MESSAGES</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="no">IMAGE_PATH</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">dirname</span><span class="p">(</span><span class="kp">__FILE__</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"/vendor/doomguy/"</span>
+
+    <span class="no">Autotest</span><span class="p">.</span><span class="nf">add_hook</span> <span class="ss">:initialize</span> <span class="k">do</span> <span class="o">|</span><span class="n">at</span><span class="o">|</span>
+      <span class="n">at</span><span class="p">.</span><span class="nf">testlib</span> <span class="o">=</span> <span class="s2">"minitest/autorun"</span>
+      <span class="vi">@counter</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">end</span>
+
+    <span class="no">Autotest</span><span class="p">.</span><span class="nf">add_hook</span> <span class="ss">:all_good</span> <span class="k">do</span> <span class="o">|</span><span class="n">at</span><span class="o">|</span>
+      <span class="k">if</span> <span class="vi">@counter</span> <span class="o">&gt;</span> <span class="mi">0</span>
+        <span class="no">TerminalNotifier</span><span class="p">.</span><span class="nf">notify</span><span class="p">(</span><span class="s2">"All fixed!"</span><span class="p">,</span>
+          <span class="ss">:title</span> <span class="o">=&gt;</span> <span class="s1">'minitest-autotest'</span><span class="p">,</span>
+          <span class="ss">:appIcon</span> <span class="o">=&gt;</span> <span class="no">IMAGE_PATH</span> <span class="o">+</span> <span class="s2">"pass.png"</span>
+        <span class="p">)</span>
+
+        <span class="vi">@counter</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="no">Autotest</span><span class="p">.</span><span class="nf">add_hook</span> <span class="ss">:ran_command</span> <span class="k">do</span> <span class="o">|</span><span class="n">at</span><span class="o">|</span>
+      <span class="k">if</span> <span class="n">at</span><span class="p">.</span><span class="nf">failures</span><span class="p">.</span><span class="nf">count</span> <span class="o">&gt;</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="vi">@counter</span><span class="p">.</span><span class="nf">eql?</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">||</span> <span class="vi">@counter</span><span class="p">.</span><span class="nf">eql?</span><span class="p">(</span><span class="no">SKIP_MESSAGES</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+          <span class="n">count</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">9</span> <span class="o">+</span> <span class="n">at</span><span class="p">.</span><span class="nf">failures</span><span class="p">.</span><span class="nf">count</span><span class="p">)</span> <span class="o">/</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">].</span><span class="nf">min</span>
+
+          <span class="no">TerminalNotifier</span><span class="p">.</span><span class="nf">notify</span><span class="p">(</span><span class="n">failed_message</span><span class="p">(</span><span class="n">at</span><span class="p">.</span><span class="nf">failures</span><span class="p">.</span><span class="nf">count</span><span class="p">),</span>
+            <span class="ss">:title</span> <span class="o">=&gt;</span> <span class="s1">'minitest-autotest'</span><span class="p">,</span>
+            <span class="ss">:appIcon</span> <span class="o">=&gt;</span> <span class="no">IMAGE_PATH</span> <span class="o">+</span> <span class="s2">"fail</span><span class="si">#{</span><span class="n">count</span><span class="si">}</span><span class="s2">.png"</span>
+          <span class="p">)</span>
+
+          <span class="vi">@counter</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">else</span>
+          <span class="vi">@counter</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">failed_message</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+      <span class="n">count</span><span class="p">.</span><span class="nf">eql?</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">?</span> <span class="s2">"</span><span class="si">#{</span><span class="n">count</span><span class="si">}</span><span class="s2"> test failed"</span> <span class="p">:</span> <span class="s2">"</span><span class="si">#{</span><span class="n">count</span><span class="si">}</span><span class="s2"> tests failed"</span>
+    <span class="k">end</span>
+</code></pre></div></div>
+
+<p>So, now I’m fully happy with result and productive!</p>
+
+<p><img src="https://thepracticaldev.s3.amazonaws.com/i/879q596j4z6igz2j52fc.png" alt="Woohoo, Doom guy in notifications!" /></p>
+
+<p>Happy testing!</p>
+:ET
