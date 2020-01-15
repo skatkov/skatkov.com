@@ -1,0 +1,58 @@
+I"Æ<p>Just a sample post to show some of the <em>typography</em> elements supported from
+<strong>daktilo</strong> theme.</p>
+
+<hr />
+
+<p>A blockquote:</p>
+
+<blockquote>
+  <p>We are Hitchhikers in the road of open source knowledge.</p>
+</blockquote>
+
+<h2 id="header-2">Header 2</h2>
+
+<p>Duis lacinia commodo dui, vel aliquam metus hendrerit eu. Integer et scelerisque dui. Sed nec molestie quam. Donec sit amet nisl a massa commodo ultrices nec quis nunc. Aenean aliquet eu arcu adipiscing dignissim. Nunc dictum elit vitae dolor molestie aliquet.</p>
+
+<p>Example code:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">light</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Light</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">switchUp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FlipUpCommand</span><span class="p">(</span><span class="nx">light</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">switchDown</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FlipDownCommand</span><span class="p">(</span><span class="nx">light</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Switch</span><span class="p">();</span>
+
+<span class="nx">s</span><span class="p">.</span><span class="nx">storeAndExecute</span><span class="p">(</span><span class="nx">switchUp</span><span class="p">);</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">storeAndExecute</span><span class="p">(</span><span class="nx">switchDown</span><span class="p">);</span></code></pre></figure>
+
+<p>A list:</p>
+
+<ul>
+  <li>Praesent nisi elit, bibendum ut consectetur ac, aliquet in nunc</li>
+  <li>Donec ante est, volutpat in mi et, pulvinar congue dolor.</li>
+  <li>Quisque ultrices pulvinar sollicitudin.</li>
+  <li>Duis elementum odio eu euismod suscipit.</li>
+  <li>Integer enim lorem, interdum sit amet consectetur non, bibendum eget neque.</li>
+</ul>
+
+<p>A numbered list:</p>
+
+<ol>
+  <li>Praesent nisi elit, bibendum ut consectetur ac, aliquet in nunc.</li>
+  <li>Donec ante est, volutpat in mi et, pulvinar congue dolor.</li>
+  <li>Quisque ultrices pulvinar sollicitudin.</li>
+  <li>Duis elementum odio eu euismod suscipit.</li>
+  <li>Integer enim lorem, interdum sit amet consectetur non, bibendum eget neque.</li>
+</ol>
+
+<p>Definition list:</p>
+
+<dl>
+  <dt>Curabitur cursus magna eu sem cursus</dt>
+  <dd>ac ultrices urna pharetra.</dd>
+  <dd>Duis scelerisque ipsum eu luctus elementum.</dd>
+  <dt>Pellentesque habitant morbi tristique senectus</dt>
+  <dd>Curabitur malesuada lacus ac gravida porttitor</dd>
+  <dd>Duis sodales feugiat lorem et mollis.</dd>
+</dl>
+
+<p>Want to suggest something? Please <a href="https://github.com/kronik3r/daktilo/issues/new">Send me a request</a>.</p>
+:ET
