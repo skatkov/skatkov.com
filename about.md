@@ -4,8 +4,6 @@ title: About
 subtitle: Just who the hell you think I am?
 permalink: /about/
 ---
-
-# HEY, VISITOR!
   
   My name is Stanislav Katkov. But you can call me - 
   Stas. I hope you'll leave comment in my guestbook...
