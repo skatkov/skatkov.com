@@ -2,8 +2,7 @@
 title: Fully automated automated testing (doom guy edition)
 published: true
 description: 
-layout: page
-tags: ruby, minitest, tdd
+layout: post
 ---
 
 ![Woohoo, Doom guy in notifications!](https://thepracticaldev.s3.amazonaws.com/i/879q596j4z6igz2j52fc.png)
