@@ -1,6 +1,6 @@
 ---
 title: Running a newsletter with better metrics
-published: true
+layout: post
 description: I found myself running a semi-successful curated newsletter. What metric should I base this business on? Thinking out-loud.
 ---
 
