@@ -3,6 +3,8 @@ body {
     font-family: 'Open Sans', sans-serif;
     color: $iron;
     background-color: $dorian;
+    font-size: 20px;
+    line-height: 32px;
 }
 
 a {
@@ -13,11 +15,6 @@ a {
     &:hover {
 
     }
-}
-
-p {
-    font-size: 20px;
-    line-height: 32px;
 }
 
 img {
