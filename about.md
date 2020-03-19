@@ -5,38 +5,9 @@ subtitle: Just who the hell you think I am?
 permalink: /about/
 ---
   
-  My name is Stanislav Katkov. But you can call me - 
-  Stas. I hope you'll leave comment in my guestbook...
-  just joking.
-
-  I like to tinker with things -- mostly it's software.
-  
-  There is a curvy footpath of my involved in different
-  aspects of creating software professionally. Traces of
-  my activities can be found here:
-
-  - <a href="https://angel.co/skatkov">angel.co/skatkov</a>
-  - <a href="https://github.com/skatkov">github.com/skatkov</a>
-  - <a href="https://www.upwork.com/o/profiles/users/_~0132f0b04d803f9c84/">upwork.com/skatkov</a>
-
-
-  In search for productivity improvements I abandoned 
-  grey walls and cubicles to find them completely unnaceptable
-  for productive work.
-
-  I did some talks about my digital nomad and remote worker journeys, but only in Russian. 
-  
-  - <a href="https://www.youtube.com/watch?v=zaqZYDFm7Wo">Дигитальные Номады</a>
-  - <a href="https://www.youtube.com/watch?v=0dXJQ3gQKDU">Страшная правда о работающих удалённо фирмах</a>
-
-
-  I manage multiple bootstrapped side-projects. And I'm
-  blessed with supportive friends.
-
-  - <a href="https://www.ashop.co">ASHOP.CO</a>: 
-    Effortless Amazon Associate Stores
-  - <a href="https://fbacatalog.com">FBACATALOG.COM</a>: 
-    Software catalog for Amazon Sellers
-  - <a href="htttps://fbamonthly.com">FBAMONTHLY.COM</a>: 
-    Curated newsletter for Amazon Sellers
-
+  - I'm a freelance contractor helping out with growth issues in software heavy projects. It so happens that I have to work with Ruby a lot.
+  - I co-founded a baby boy, a wall drilling company,  bare-bones studio on a beach
+  - Actively participated in charity projects for prisoners and orphans
+  - I'm location independent and get to change countries of residence from time to time
+  - I bootstrapped series of online projects
+  - Have opinions about Open Source and have a tendency to contribute to it
