@@ -1,10 +1,11 @@
 ---
 layout: page
 title: About
-subtitle: Just who the hell you think I am?
+subtitle: Consultant, Bootstrapper, Nomad
 permalink: /about/
 ---
-  
+  {% include page/photo.html %}
+
   - I'm a freelance contractor helping out with growth issues in software heavy projects. It so happens that I have to work with Ruby a lot.
   - I co-founded a baby boy, a wall drilling company,  bare-bones studio on a beach
   - Actively participated in charity projects for prisoners and orphans
