@@ -1,26 +1,27 @@
-<header class="header">
-    <div class="navigation">
-        <a href="/" class="logo">{{ site.title }}</a>
+<header>
+    <nav>
+        {{ site.title }}
 
-        <ul class="menu">
+        <ul>
+            <li><a href="{{ '/' | prepend: site.baseurl }}">Blog</a></li>
+            <li><a href="{{ '/about' | prepend: site.baseurl }}">About</a></li>
+            <li><a href="{{ '/projects' | prepend: site.baseurl }}">Projects</a></li>
+            {% if site.author.github %}
+                <li><a href="https://github.com/{{ site.author.github }}" target="_blank">
+                    GitHub ↗
+                </a></li>
+            {% endif %}
 
-            <li class="menu__entry"><a href="{{ '/' | prepend: site.baseurl }}">Blog</a></li>
-            <li class="menu__entry"><a href="{{ '/about' | prepend: site.baseurl }}">About</a></li>
-            <li class="menu__entry"><a href="{{ '/projects' | prepend: site.baseurl }}">Projects</a></li>
+            {% if site.author.twitter %}
+                <li><a href="https://twitter.com/{{ site.author.twitter }}" target="_blank">
+                    Twitter ↗
+                </a></li>
+            {% endif %}
         </ul>
-    </div>
+    </nav>
 
-    <ul class="social-links">
-        {% if site.author.github %}
-            <a href="https://github.com/{{ site.author.github }}" class="social-links__entry" target="_blank">
-                <i class="fa fa-github"></i>
-            </a>
-        {% endif %}
-
-        {% if site.author.twitter %}
-            <a href="https://twitter.com/{{ site.author.twitter }}" class="social-links__entry" target="_blank">
-                <i class="fa fa-twitter"></i>
-            </a>
-        {% endif %}
-    </ul>
+    <h1>{{ page.title }}</h1>
+    {% if page.subtitle %}
+        <p><mark>{{ page.subtitle }}</mark></p>  
+    {% endif %}      
 </header>

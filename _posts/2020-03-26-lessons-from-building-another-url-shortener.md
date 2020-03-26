@@ -4,6 +4,7 @@ title: Lessons from building another URL shortener
 date: 2020-03-26 18:17 +0400
 ---
 
+
 I'm a software consultant working mostly with the web.
 
 I secretly wanted to build an URL shortener for quite some time.  It's one of those projects that seems relatively easy at first, but during my work as a consultant, I stumbled upon in-house solutions that caused more harm in the long term, than it was worth.
@@ -54,7 +55,7 @@ _A record_ also comes with a performance hit, requests for _CNAME record_ could 
 Netlify goes into great lengths to explain this problem in a blog post titled [“To www or not www”](https://www.netlify.com/blog/2017/02/28/to-www-or-not-www/).
 
 My solution was to move the domain over to a DNS provider that could handle __ALIAS records__ or __CNAME Flattering__. In my case, I had to move from [namecheap](https://namecheap.com) to [dnsimple](https://dnsimple.com). Support for this feature usually costs an additional monthly fee. 
-Bijective function for “hashing”
+### Bijective function for “hashing”
 The shortener has to come up with a public ID that uniquely identifies shortened URLs. In a lot of cases, clients will rule against your server if you're stably generating a long hash for a public ID.
  
 I used a bijective function that could transform a number into a hashed text and inverse the text back into a number. Thanks to the internet, it wasn’t that hard to find an [example on stackoverflow](https://stackoverflow.com/questions/742013/how-do-i-create-a-url-shortener/742047#742047).
@@ -73,7 +74,7 @@ headers["HTTP_REFERER"] = request.referrer if request.referrer
 
 Unfortunately, there are a number of cases when the HTTP_REFERER parameter will be empty or could not be passed. Due to specification, HTTP_REFERER will not be passed if a long URL uses insecure protocol (http://). 
 
-If a website is accessed from a HTTP Secure (HTTPS) connection and a link points to anywhere except another secure location, then the referer field is not sent.
+> If a website is accessed from a HTTP Secure (HTTPS) connection and a link points to anywhere except another secure location, then the referer field is not sent.
 
 But nowadays we have [Referrer Policy](https://w3c.github.io/webappsec-referrer-policy/) as a solution that could partially mitigate these issues by just adding meta tag to HTML pages.
 
