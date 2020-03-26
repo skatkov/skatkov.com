@@ -38,11 +38,11 @@ Some URL shorteners on a market are very creative and manage to use 200 or 303 c
 ## Keep it (really) short!
 Since the biggest use-case for shorteners are social networks with limited character capacity per message, then it's really important to lose all the fat from a short URL.
 ### Aim for a short domain
-The first step in the right direction should be your domain name - it should be as short as possible. Keep in mind that finding short  `.com` or `.org` domains will be costly, so you might want to look for [tld domains of other countries] (https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains). (`.ai` sound really cool!) These domains come with a SEO penalty and you’d be less likely to rank in google, but they are short. That’s the tradeoff most shorteners go with.
+The first step in the right direction should be your domain name - it should be as short as possible. Keep in mind that finding short  `.com` or `.org` domains will be costly, so you might want to look for [tld domains of other countries](https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains). (`.ai` sound really cool!) These domains come with a SEO penalty and you’d be less likely to rank in google, but they are short. That’s the tradeoff most shorteners go with.
 
 But there is even more fat we can lose here.
 ### Lose www, but don't lose performance and security
-A lot of people argue that "www.domain.com" vs "domain.com" usage in domains is merely a cosmetic difference. But unfortunately, dropping `www` from URL can have dire consequences because of how DNS records work.
+A lot of people argue that `www.domain.com` vs `domain.com` usage in domains is merely a cosmetic difference. But unfortunately, dropping `www` from URL can have dire consequences because of how DNS records work.
 
 Unfortunately, most DNS providers work only with two domain record types - _A record_ or _CNAME record_.
 
