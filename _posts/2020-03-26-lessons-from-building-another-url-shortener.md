@@ -2,7 +2,7 @@
 layout: post
 title: Lessons from building another URL shortener
 date: 2020-03-26 18:17 +0400
-subtitle: After careful consideration, I’ve highlighted the 3 most important things to consider insuch a project.
+subtitle: After careful consideration, I’ve highlighted the 3 most important things to consider in a project like this.
 ---
 
 
@@ -22,7 +22,7 @@ It works like a regular shortener, but as input it takes a list of Product IDs i
 - redirects to the amazon cart page with products pre-added
 - could link to multiple products
 
-After careful consideration, I’ve highlighted the 3 most important things to consider insuch a project.
+After careful consideration, I’ve highlighted the 3 most important things to consider in a project like this.
 
 ## Pick a response code wisely
 If the browser requests a URL from an external server, it would receive a [response code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) with a requested page. When using a URL shortener, page content will not be returned, but a redirect request will be issued with the following _response code_.
