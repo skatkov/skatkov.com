@@ -19,5 +19,5 @@ In my free time, I maintain very lean gems for my personal use:
 - [acts-as-taggable-array-on](https://rubygems.org/gems/acts-as-taggable-array-on) - Simple tagging gem for Rails using postgres array.
 - [vaccum](https://rubygems.org/gems/vacuum) - A wrapper to the Amazon Product Advertising API
 - [peanut_labs](https://rubygems.org/gems/peanut_labs) - Simply library for integration with peanutlabs.com webiste
- 
+- [jekyll-news-sitemap](https://rubygems.org/gems/jekyll-news-sitemap) - Your friendly gem to produce Google News sitemap compatible xml file.  
 
