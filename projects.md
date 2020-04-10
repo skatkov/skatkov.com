@@ -15,6 +15,7 @@ Launching side-projects greatly contributes to my self-learning. Here's the list
 ## Open-source
 
 In my free time, I maintain very lean gems for my personal use:
+- [awesome-stimulusjs](https://github.com/skatkov/awesome-stimulusjs) - Modestly awesome list of StimulusJS related content.
 - [carriage](https://rubygems.org/gems/carriage) - Carriage is a Ruby wrapper to Amazon's Cart Form functionality
 - [acts-as-taggable-array-on](https://rubygems.org/gems/acts-as-taggable-array-on) - Simple tagging gem for Rails using postgres array.
 - [vaccum](https://rubygems.org/gems/vacuum) - A wrapper to the Amazon Product Advertising API
