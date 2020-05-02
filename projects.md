@@ -9,7 +9,7 @@ subtitle: Open Source, Websites
 Launching side-projects greatly contributes to my self-learning. Here's the list of projects I launched recently and still maintain:
 - [aShop.co](https://www.ashop.co) - Effortless Store platform for Amazon Sellers 
 - [aCart.to](https://www.acart.to) - One of a kind Amazon product shortener
-- [FbaMonthly.com](https://www.fbamonthly.com) - Independent twice-a-month free newsletter for busy Sellers and Amazon Geeks 
+- [FbaMonthly.com](https://www.fbamonthly.com) - Independent twice-a-month free news for busy Sellers and Amazon Geeks 
 
 ## Open-source
 In my free time I contribute to open source. This is an incomplete list of repositories you can find my work at.
