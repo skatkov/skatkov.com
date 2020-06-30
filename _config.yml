@@ -19,6 +19,7 @@ styles: [agate, androidstudio, arta, asceti, atelier-cave.dark, atelier-cave.lig
 
 # Handling Reading
 exclude: ["README.md", "README.html"]
+include: ["_redirects"]
 
 # Build settings
 highlighter: null
