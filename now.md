@@ -24,12 +24,12 @@ After some success in self-employment area, my appetite grew, and I tried to swa
 I'm taking it easy now - work for NewStore at a technical leadership position 4 days a week.
 
 # Spare time
-I quit partying, stopped consuming alcohol and keep consumption of substances under tight control. 
+I quit partying, stopped consuming alcohol and don't do any funny things. Pretty boring life, as it might seem.
 
 I keep builders mindset by maintaining [Briefcake](https://briefcake.com) project.
 
 My crypto enthusiasm got reignited with appearance of DeFi. So as another side-project, I spend time exploring DeFi protocols and build decentralized infra for web3 in a garage.
 
 # Investments
-Figuring out what to do with money that I managed to accumulate - getting familiar with ETF, stocks and luxury goods (mainly watches)
+What to do with money that I managed to accumulate? Don't let them just sit on a bank account@ Getting familiar with ETF, stocks and luxury goods (mainly watches)
 
