@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Open-source
+title: Open Source
 subtitle: ... or how one deals with "Fixer Syndrome".
 ---
 

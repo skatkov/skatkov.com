@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Side-projects
+title: Side Projects
 subtitle: Can't stop launching something..
 ---
 
