@@ -1,10 +1,10 @@
 ---
 layout: post
 title: Side-projects
-subtitle: Can't stop launching something ... and failing.
+subtitle: Can't stop launching something..
 ---
 
-[briefcake.com](https://briefcake.com) is the only service I maintain. This is a list of my from side-projects from 
+[briefcake.com](https://briefcake.com) is the only service I maintain. This is a list of my side-projects from 
 "project graveyard". I probably forget some. 
 
 - aShop.co - Effortless Store platform for Amazon Sellers (offline) 

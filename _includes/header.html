@@ -1,20 +1,21 @@
 <header>
     <nav>
-
         <ul>
             <li><a href="{{ '/' | prepend: site.baseurl }}">#</a></li>
-            <li><a href="{{ '/now' | prepend: site.baseurl }}">Now</a></li>
-            <li><a href="{{ '/blog' | prepend: site.baseurl }}">Blog</a></li>
-            <li><a href="{{ '/projects' | prepend: site.baseurl }}">Side Projects</a></li>
-            <li><a href="{{ '/open-source' | prepend: site.baseurl }}">Open Source</a></li>
+            <li><a href="{{ '/now' | prepend: site.baseurl }}"><u>Now</u></a></li>
+            <li><a href="{{ '/blog' | prepend: site.baseurl }}"><u>Blog</u></a></li>
+            <li><a href="{{ '/projects' | prepend: site.baseurl }}"><u>Side Projects</u></a></li>
+            <li><a href="{{ '/open-source' | prepend: site.baseurl }}"><u>Open Source</u></a></li>
+        </ul>
+        <ul>
             {% if site.author.github %}
-                <li><a href="https://github.com/skatkov" target="_blank">
+                <li><a role="button" class="outline"  href="https://github.com/skatkov" target="_blank">
                     GitHub ↗
                 </a></li>
             {% endif %}
 
             {% if site.author.twitter %}
-                <li><a href="https://twitter.com/{{ site.author.twitter }}" target="_blank">
+                <li><a role="button" class="outline" href="https://twitter.com/{{ site.author.twitter }}" target="_blank">
                     Twitter ↗
                 </a></li>
             {% endif %}
