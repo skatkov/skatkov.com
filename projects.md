@@ -1,19 +1,17 @@
 ---
 layout: post
-title: Projects
-subtitle: Open Source, Websites
+title: Side-projects
+subtitle: Can't stop launching something ... and failing.
 ---
 
+[briefcake.com](https://briefcake.com) is the only service I maintain. This is a list of my from side-projects from 
+"project graveyard". I probably forget some. 
 
-## Side-projects
-Launching side-projects greatly contributes to my self-learning. Here's the list of projects I launched recently and still maintain:
-- [aShop.co](https://www.ashop.co) - Effortless Store platform for Amazon Sellers 
-- [aCart.to](https://www.acart.to) - One of a kind Amazon product shortener
-
-Projects that are still available, but I don't maintain those anymore:
-- [HowToDigitalNomad.com](http://www.howtodigitalnomad.com/) - Collection of usefull resources for Digital Nomads
-- [FbaMonthly.com](https://www.fbamonthly.com) - Independent twice-a-month free news for busy Sellers and Amazon Geeks 
-- [FbaCatalog.com](https://www.fbacatalog.com) - Biggest software catalog for Amazon Sellers
-
-There is also a graveyard of other projects that are not available anymore.
+- aShop.co - Effortless Store platform for Amazon Sellers (offline) 
+- [aCart.to](https://github.com/skatkov/acart) - One of a kind Amazon product shortener (offline)
+- [FbaMonthly.com](https://www.fbamonthly.com) - Independent curated newsletter for Sellers and Amazon Geeks (sold) 
+- [FbaCatalog.com](https://www.fbacatalog.com) - Biggest software catalog for Amazon Sellers (sold)
+- soihok.com - eCommerce Store for niche Thai cosmetics (offline)
+- [HowToDigitalNomad.com](http://www.howtodigitalnomad.com/) - Collection of useful resources for Digital Nomads (not updated)
+- gamestockgfx.com - A marketplace for stock images for games (never fully launched)
 
