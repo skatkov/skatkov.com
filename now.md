@@ -32,3 +32,4 @@ My crypto enthusiasm got reignited with appearance of DeFi. So as another side-p
 
 # Investments
 Figuring out what to do with money that I managed to accumulate - getting familiar with ETF, stocks and luxury goods (mainly watches)
+
