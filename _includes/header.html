@@ -1,11 +1,14 @@
 <header>
     <nav>
         <ul>
-            <li><a href="{{ '/' | prepend: site.baseurl }}">#</a></li>
-            <li><a href="{{ '/now' | prepend: site.baseurl }}"><u>/now</u></a></li>
-            <li><a href="{{ '/blog' | prepend: site.baseurl }}"><u>/blog</u></a></li>
-            <li><a href="{{ '/projects' | prepend: site.baseurl }}"><u>/side-projects</u></a></li>
-            <li><a href="{{ '/open-source' | prepend: site.baseurl }}"><u>/open-source</u></a></li>
+            <li><a href="/">#</a></li>
+            {% for item in site.data.navigation.nav %}
+                {% if item.url == page.path %}
+                    <li> <a href="{{ item.url }}" role="button" >{{ item.title }}</a></li>
+                {% else %}
+                    <li> <a href="{{ item.url }}"><u>{{ item.title }}</u></a></li>
+                {% endif %}
+            {% endfor %}
         </ul>
         <ul>
             {% if site.author.github %}
