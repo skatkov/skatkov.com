@@ -144,6 +144,8 @@ nav ul li {
     margin: 0 0.5rem;
 }
 
+
+
 /* Typography */
 code {
     display: inline-block;
@@ -370,3 +372,8 @@ blockquote footer {
 :root {
   --width-content: 820px;
 } 
+
+
+.page-photo {
+    text-align: var(--justify-important);
+}

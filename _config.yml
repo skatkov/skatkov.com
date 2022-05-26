@@ -1,7 +1,5 @@
 # Site settings
-title: Stanislav Katkov
-description: >
-  I deal with IT, so you don't have to.
+title: Stanislav (Stas) Katkov
 
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://www.skatkov.com" # the base hostname & protocol for your site

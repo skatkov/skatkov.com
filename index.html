@@ -1,21 +1,9 @@
 ---
-layout: post
+layout: page
 title: Stanislav (Stas) Katkov 
 subtitle: A dream will always triumph over reality, once it is given a chance.
 sitemap:
   priority: 0.9
 ---
 
-<section>
-	<ul>
-	    {% for post in site.posts %}
-	        <li class="post-teaser">
-	            <a href="{{ post.url | prepend: site.baseurl }}">
-	                {{ post.title }}
-	            </a>
-
-	            <small>{{ post.date | date: "%d %B %Y" }}</small>
-	        </li>
-	    {% endfor %}
-	</ul>
-</section>
+{% include page/photo.html %}
