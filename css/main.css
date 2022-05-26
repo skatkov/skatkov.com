@@ -130,8 +130,8 @@ nav {
     align-items: center;
     display: flex;
     font-weight: bold;
-    justify-content: space-between;
-    margin-bottom: 7rem;
+    justify-content: center;
+    margin-bottom: 4rem;
 }
 
 nav ul {
