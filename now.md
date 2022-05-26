@@ -26,9 +26,9 @@ I'm taking it easy now - work for NewStore at a technical leadership position 4 
 # Spare time
 I quit partying, stopped consuming alcohol and keep consumption of substances under tight control. 
 
-Most of my time is spent on improving https://briefcake.com.
+I keep builders mindset by maintaining [Briefcake](https://briefcake.com) project.
 
-My crypto enthusiasm got reignited with appearance of DeFi. I spend significant amount of time exploring DeFi projects and building decentralized infra for web3.
+My crypto enthusiasm got reignited with appearance of DeFi. So as another side-project, I spend time exploring DeFi protocols and build decentralized infra for web3 in a garage.
 
 # Investments
 Figuring out what to do with money that I managed to accumulate - getting familiar with ETF, stocks and luxury goods (mainly watches)
