@@ -31,5 +31,5 @@ I keep builders mindset by maintaining [Briefcake](https://briefcake.com) projec
 My crypto enthusiasm got reignited with appearance of DeFi. So as another side-project, I spend time exploring DeFi protocols and build decentralized infra for web3 in a garage.
 
 # Investments
-What to do with money that I managed to accumulate? Don't let them just sit on a bank account@ Getting familiar with ETF, stocks and luxury goods (mainly watches)
+What to do with money that I managed to accumulate? Can't let them just sit in bank account! Gotta get familiar with ETF, stocks and luxury goods (mainly watches)
 
