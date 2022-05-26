@@ -17,12 +17,3 @@ Projects that are still available, but I don't maintain those anymore:
 
 There is also a graveyard of other projects that are not available anymore.
 
-## Open-source
-In my free time I contribute to open source. This is an incomplete list of repositories you can find my work at.
-- [awesome-stimulusjs](https://github.com/skatkov/awesome-stimulusjs) - Modestly awesome list of StimulusJS related content.
-- [carriage](https://rubygems.org/gems/carriage) - Carriage is a Ruby wrapper to Amazon's Cart Form functionality
-- [acts-as-taggable-array-on](https://rubygems.org/gems/acts-as-taggable-array-on) - Simple tagging gem for Rails using postgres array.
-- [vaccum](https://rubygems.org/gems/vacuum) - A wrapper to the Amazon Product Advertising API
-- [peanut_labs](https://rubygems.org/gems/peanut_labs) - Gem wrapper for integration with peanutlabs.com
-- [jekyll-news-sitemap](https://rubygems.org/gems/jekyll-news-sitemap) - Your friendly gem to produce Google News sitemap compatible xml file.  
-
