@@ -1,6 +1,6 @@
 .presenter {
     text-align: center;
-    padding: 3rem 1rem;
+    padding: 2rem 1rem;
 }
 
 .page-photo {
@@ -20,6 +20,6 @@ article {
     margin: 0;
 }
 
-.container {
-    padding: 1 rem !important;
+body > main {
+    padding: 0rem !important;
 }
