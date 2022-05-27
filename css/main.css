@@ -19,3 +19,7 @@ h1 {
 article {
     margin: 0;
 }
+
+.container {
+    padding: 1 rem !important;
+}
