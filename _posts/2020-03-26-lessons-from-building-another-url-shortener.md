@@ -75,7 +75,7 @@ headers["HTTP_REFERER"] = request.referrer if request.referrer
 
 Unfortunately, there are a number of cases when the HTTP_REFERER parameter will be empty or could not be passed. Due to specification, HTTP_REFERER will not be passed if a long URL uses insecure protocol (http://). 
 
-> If a website is accessed from a HTTP Secure (HTTPS) connection and a link points to anywhere except another secure location, then the referer field is not sent.
+>If a website is accessed from a HTTP Secure (HTTPS) connection and a link points to anywhere except another secure location, then the referer field is not sent.
 
 But nowadays we have [Referrer Policy](https://w3c.github.io/webappsec-referrer-policy/) as a solution that could partially mitigate these issues by just adding meta tag to HTML pages.
 
