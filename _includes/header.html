@@ -1,32 +1,25 @@
-<header>
-    <nav>
-        <ul>
-            <li><a href="/">#</a></li>
-            {% for item in site.data.navigation.nav %}
-                {% if item.url == page.path %}
-                    <li> <a href="{{ item.url }}" role="button" >{{ item.title }}</a></li>
-                {% else %}
-                    <li> <a href="{{ item.url }}"><u>{{ item.title }}</u></a></li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-        <ul>
-            {% if site.author.github %}
-                <li><a role="button" class="outline"  href="https://github.com/skatkov" target="_blank">
-                    GitHub ↗
-                </a></li>
+<nav class="container-fluid">
+    <ul>
+        <li><a href="/">#</a></li>
+        {% for item in site.data.navigation.nav %}
+            {% if item.url == page.path %}
+                <li> <a href="{{ item.url }}" role="button" >{{ item.title }}</a></li>
+            {% else %}
+                <li> <a href="{{ item.url }}"><u>{{ item.title }}</u></a></li>
             {% endif %}
+        {% endfor %}
+    </ul>
+    <ul>
+        {% if site.author.github %}
+            <li><a role="button" class="outline"  href="https://github.com/skatkov" target="_blank">
+                GitHub ↗
+            </a></li>
+        {% endif %}
 
-            {% if site.author.twitter %}
-                <li><a role="button" class="outline" href="https://twitter.com/{{ site.author.twitter }}" target="_blank">
-                    Twitter ↗
-                </a></li>
-            {% endif %}
-        </ul>
-    </nav>
-
-    <h1>{{ page.title }}</h1>
-    {% if page.subtitle %}
-        <p><mark>{{ page.subtitle }}</mark></p>  
-    {% endif %}      
-</header>
+        {% if site.author.twitter %}
+            <li><a role="button" class="outline" href="https://twitter.com/{{ site.author.twitter }}" target="_blank">
+                Twitter ↗
+            </a></li>
+        {% endif %}
+    </ul>
+</nav>
