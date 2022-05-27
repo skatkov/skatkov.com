@@ -1,12 +1,12 @@
 nav:
-- title: /Now
+- title: /now
   url: /now/
 
-- title: /Blog
+- title: /blog
   url: /blog/
 
-- title: /Side-projects
+- title: /projects
   url: /projects/
 
-- title: /Open-source
+- title: /open-source
   url: /open-source/
