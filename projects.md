@@ -4,8 +4,9 @@ title: Side Projects
 subtitle: Can't stop launching something..
 ---
 
-[briefcake.com](https://briefcake.com) is the only service I maintain. This is a list of my side-projects from 
-"project graveyard". I probably forget some. 
+[briefcake.com](https://briefcake.com) is the only service I maintain currently. 
+
+This is a list of side-projects from "project graveyard". It's only a failed project, if I learned nothing from it. 
 
 - aShop.co - Effortless Store platform for Amazon Sellers (offline) 
 - [aCart.to](https://github.com/skatkov/acart) - One of a kind Amazon product shortener (offline)
