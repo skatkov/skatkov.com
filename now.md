@@ -5,13 +5,13 @@ subtitle: Last Updated Sep 14th, 2022, from Thailand.
 ---
 
 # Settling down
-We call Netherlands our home and looking for a house to buy! 
+We call Eindhoven city in Netherlands our home now. We got our home and I'm slowly becoming a part time handy man to get this house up to our standards.
  
-# Building a book collection
-I like having books around and now since I'm settled, I got a bookshelf and stacking books. Happy to receive a recommendation or book gift!
+# Sports
+At my age, I can't take shortcuts in terms of physical activity - so I'm trying to regularly train Kickboxing/Muay Thai and go wakeboarding at least one a week.
 
 # Spare time
-I experimented with smaller projects and open source, not to lose a builder mindset. But I'll be focusing all my time into Posh TUI - API Documentation Browser in console.
+At my free time I work on my passion project - https://poshtui.com. I don't write about it much, to focus more on building. But I try to sell some lifetime license for early stage adopters. App is a bit lacking now, but it's getting there step by step.
 
 # Habits are everything!
 Working on building up correct set of habits. Family life requires some stability and balance is easy to tip over.
