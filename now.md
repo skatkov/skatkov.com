@@ -1,7 +1,7 @@
 ---
 layout: post
 title: What I'm doing now
-subtitle: Last Updated Sep 14th, 2022, from Thailand. 
+subtitle: Last Updated April 30th, 2024, from Netherlands. 
 ---
 
 # Settling down
