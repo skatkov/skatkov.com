@@ -18,7 +18,7 @@ I should provide a disclamer, that I'm using Manjaro, but fixes seem universal f
 
 # Subwoofers should be blasting!
 1. Checkout this repository [https://github.com/darinpp/yoga-slim-7](https://github.com/darinpp/yoga-slim-7)
-2. Check that /etc/rc.local exists, if not then add it:
+2. Check that `/etc/rc.local` file exists, if not then add it:
     ```
         echo "#!/bin/sh" > /etc/rc.local
         chmod +x /etc/rc.local
