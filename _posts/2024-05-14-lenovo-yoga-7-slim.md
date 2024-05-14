@@ -32,8 +32,8 @@ I should provide a disclamer, that I'm using Manjaro, but fixes seem universal f
     ```
 4.Copy `TIAS2781RCA4.bin` and `TAS2XXX38BB.bin` files from repo into `/lib/firmware`.
     ```
-        cp yoga-slim-7/lib/firmware/TIAS2781RCA4.bin /lib/firmware/
-        cp yoga-slim-7/lib/firmware/TAS2XXX38BB.bin /lib/firmware/
+        sudo cp yoga-slim-7/lib/firmware/TIAS2781RCA4.bin /lib/firmware/
+        sudo cp yoga-slim-7/lib/firmware/TAS2XXX38BB.bin /lib/firmware/
     ```
 5. Now logout and login and you'll have all speakers working.
 
