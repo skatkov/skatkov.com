@@ -52,6 +52,6 @@ I didn't had to do any fixes for alsa mixer, somehow it already adjusted volume 
     - Save the file (Ctrl+X, Y, Enter).
     - Run `sudo update-grub` to apply the changes.
 
-It might be a good idea, to double check that "secure boot" is not enabled in BIOS. But other then that, it should work from now on.
+It might be a good idea, to double check that "secure boot" is not enabled in BIOS. But other then that, suspend should work from now on.
 
 Enjoy. It's a great laptop, trully a beast!
