@@ -5,7 +5,7 @@ date: 2024-05-14 01:04 +0200
 ---
 I have recently became a happy owner of Lenovo Yoga 7 Slim gen 8 laptop. 
 
-Normally I'd go with Thinkpad (probably x1 version) and things would "just work" on Linux. But this time Thinkpad-land didn't make me particulary happy with whatever it has to offer and so Lenovo Yoga got bought instead. It comes with much modern hardware and more risk that things would not work on Linux.
+Normally I'd go with Thinkpad (probably x1 version) and things would "just work" on Linux. But this time Thinkpad-land didn't make me particulary happy with whatever it has to offer and so Lenovo Yoga got bought instead. It comes with modern hardware and more risk that things would not work on Linux.
 
 And I was right, some things didn't work. There were mainly two issues:
 
