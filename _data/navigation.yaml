@@ -2,14 +2,8 @@ nav:
 - title: /now
   url: /now/
 
+- title: /ideas
+  url: /ideas/
+
 - title: /blog
   url: /blog/
-
-- title: /uses
-  url: /uses/
-
-- title: /projects
-  url: /projects/
-
-- title: /open-source
-  url: /open-source/
