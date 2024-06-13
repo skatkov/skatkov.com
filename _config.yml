@@ -12,7 +12,7 @@ author:
 # google_analytics: 'UA-XXXXXXXX-X'
 
 # Syntax highlighting
-highlightstyle: ""
+highlightstyle: "github"
 styles:
   [
     agate,
@@ -90,5 +90,12 @@ include: ["_redirects"]
 # Build settings
 highlighter: null
 markdown: kramdown
+
+# Drafts are handled according to a method defined in this article:
+#     https://aravindiyer.netlify.app/posts/jekyll-drafts
+collections:
+  drafts:
+    output: true
+    permalink: /drafts/:name
 
 permalink: /:collection/:name
