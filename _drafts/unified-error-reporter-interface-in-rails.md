@@ -52,9 +52,7 @@ This is my rough estimation how services support this feature
 | Scout       | ❌                  | ❌                  |❌                 |             |
 
 ## Going beyond intented use
-Original intent of this interface was to improve the lives of rails developers and error monitoring services, we still see, that Monitoring Services are not in a huge hurry to support this reporter. But rails developers are already actively integrating this reporter to catch all the difficult to spot issues.
-
-The original pitch in rails issues was focused on improving the lives of maintainers of Error Monitoring services and rails core developers. It was hard to hookup into all layers of rails to gather all possible errors and warnings that Rails was raising. It was equally hard for rails-core team to communicate errors, that didn't end up buried somewhere in logs where nobody sees them.
+Original pitch in rails issues was focused on improving the lives of maintainers of Error Monitoring services and rails core developers. It was hard to hookup into all layers of rails to gather all possible errors and warnings that Rails was raising. It was equally hard for rails-core team to communicate errors, that didn't end up buried somewhere in logs where nobody sees them.
 
 We see that Monitoring Services are not in a huge hurry to implement support for this reporter. But rails developers are already actively integrating it to catch all the difficult to spot issues. But I would like to highlight that there are two additional actors who can benefit here.
 
