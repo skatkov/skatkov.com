@@ -84,13 +84,12 @@ class Webhooks::CustomerIoHandler < Munster::BaseHandler
     # Verify that request is actually comming from customer.io
     # @see https://customer.io/docs/api/webhooks/#section/Securely-Verifying-Requests
     def valid?(action_dispatch_request)
-      signing_key = Rails.application.secrets.customer_io_webhook_signing_key
       xcio_signature = action_dispatch_request.headers["HTTP_X_CIO_SIGNATURE"]
       xcio_timestamp = action_dispatch_request.headers["HTTP_X_CIO_TIMESTAMP"]
       request_body = action_dispatch_request.body.read
       string_to_sign = "v0:#{xcio_timestamp}:#{request_body}"
     
-      hmac = OpenSSL::HMAC.hexdigest("SHA256", signing_key, string_to_sign)
+      hmac = OpenSSL::HMAC.hexdigest("SHA256", 'customer_io_webhook_signing_key', string_to_sign)
     
       Rack::Utils.secure_compare(hmac, xcio_signature)
     end
