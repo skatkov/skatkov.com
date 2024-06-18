@@ -131,4 +131,4 @@ end
 
 We went through the basic webhook endpoint setup with Munster, but it offers a bit more than that. This little framework is especially beneficial in cases where you have more than one webhook endpoint. Once you set it up in your project , it's just a matter of defining a single handler to accept new types of webhooks.
 
-The core of this is already battle-tested at [cheddar.me](https://www.cheddar.me), but we're still working on fleshing out the details and would love your feedback! You can find Munster at [https://github.com/cheddar-me/munster]
+The core of this is already battle-tested at [cheddar.me](https://www.cheddar.me), but we're still working on fleshing out the details and would love your feedback! You can find Munster at [https://github.com/cheddar-me/munster](https://github.com/cheddar-me/munster)
