@@ -4,7 +4,7 @@ title: Munster - Webhooks processing engine for Rails
 ---
 By the time of writing this article, I had already written webhook processing logic at least 10 times for different companies and clients. I and [Julik](https://blog.julik.nl/) had implemented one recently at our [current place of employment](https://cheddar.me). And guess what? We had to do it one more time for a microservice we were about to erect next to our majestic monolith.
 
-Our combined experience in the digestion of webhooks, had already produced a reasonable generic solution. Should we just copy some files over to a microservice and duplicate that code? Nah, let's save the world from wasting those countless hours of re-implementing webhooks and processing them over and over again. 
+Our combined experience in the digestion of webhooks, had already produced a reasonable generic solution. Should we just copy some files over to a microservice and duplicate that code? Nah, let's save the world from wasting those countless hours of re-implementing webhooks over and over again. 
 
 Let's improve it for everyone and extract existing code into a gem.
 
