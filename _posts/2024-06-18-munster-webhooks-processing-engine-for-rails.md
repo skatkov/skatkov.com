@@ -35,7 +35,7 @@ It will create the required migration and an initializer file at `app/initialize
 
 ### Mounting
 
-Munster is an engine - and a Rack app,  so it can be mounted in your Rails routes file. Inside `config/routes.rb` you can mount a webhook engine on a subdomain (like `webhooks.yourdomain.com/:service_id`):
+Munster is an engine and a Rack app,  so it can be mounted in your Rails routes file. Inside `config/routes.rb` you can mount a webhook engine on a subdomain (like `webhooks.yourdomain.com/:service_id`):
 
 ```
 scope as: "webhooks", constraints: "webhooks.yourdomain.com" do
