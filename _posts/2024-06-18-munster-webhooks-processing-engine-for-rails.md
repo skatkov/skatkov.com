@@ -37,7 +37,7 @@ It will create the required migration and an initializer file at `app/initialize
 
 Munster is an engine and a Rack app,  so it can be mounted in your Rails routes file. Inside `config/routes.rb` you can mount a webhook engine on a subdomain (like `webhooks.yourdomain.com/:service_id`):
 
-```
+```ruby
 scope as: "webhooks", constraints: "webhooks.yourdomain.com" do
     mount Munster::Engine, at: "/", as: ""
 end
@@ -52,7 +52,7 @@ Having a separate subdomain for receiving webhooks can be useful if you have ver
 
 The next step is to define a webhook handler. For the sake of an example, let's create a handler for Customer.io at `app/webhooks/customer_io_handler.rb`. The handler will take care of handling two specific metrics from Customer.io - `subscribed` and `unsubscribed`. We want to store a local value per user called "subscribed" – once a user unsubscribes using customer.io, we want to record this information in our app database. Same for when a user subscribes.
 
-```
+```ruby
 class Webhooks::CustomerIoHandler < Munster::BaseHandler
     def process(webhook)
       return if webhook.status.eql?("processing")
