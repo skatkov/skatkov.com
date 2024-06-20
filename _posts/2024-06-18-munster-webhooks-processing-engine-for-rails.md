@@ -117,7 +117,7 @@ There are more methods that could be redefined and tweaked, but these three are 
 
 And lastly we need to mount our handler. We use the "service ID", which will also be the URL path component for your webhook. For our handler, we will use "customer-io" (our URL to paste into the Customer.io configuration will thus be `https://your-app.example.com/webhooks/customer-io`):
 
-```
+```ruby
 require_relative '../../app/webhooks/customer_id_handler.rb'
 
 Munster.configure do |config|
